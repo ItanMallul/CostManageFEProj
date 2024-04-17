@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="idb.js" type="module"></script>
+<script type = "module">
+    import * as idb from './idb.js';
+
+    async function test() {
+        try {
+            const db = await idb.openDatabase();
+            console.log("Database opened successfully.");
+
+            const result1 = await idb.addExpense({ sum: 200, category: "HOUSING", description: "rent for 01.2023" });
+            console.log("Added first expense successfully.");
+
+            const result2 = await idb.addExpense({ sum: 300, category: "FOOD", description: "food for weekend" });
+            console.log("Added second expense successfully.");
+        } catch (error) {
+            console.error("An error occurred:", error);
+        }
+    }
+    test();
+</script>
+</body>
+</html>
