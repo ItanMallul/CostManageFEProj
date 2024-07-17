@@ -1,4 +1,4 @@
-
+```
 import React from "react";
 import CostManager from "./CostManager";
 import ErrorBoundary from "./ErrorBoundary";
@@ -13,3 +13,4 @@ function App() {
   );
 }
 export default App;
+```
